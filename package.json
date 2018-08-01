@@ -1,6 +1,6 @@
 {
   "name": "repertoire",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Repertoire is a tool that adds fluidity to react+redux apps.",
   "keywords": [
     "react",
