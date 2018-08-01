@@ -96,6 +96,6 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "collectCoverage": true
+    "collectCoverage": false
   }
 }
