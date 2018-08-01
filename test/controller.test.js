@@ -174,6 +174,7 @@ describe('Controller tests', function () {
   });
 
   it('test controller action throws error', function () {
+    const spy = jest.spyOn(console, 'error').mockImplementation(() => {})
     const controllerInstance = new AppController(Container);
     const storeManager = new StoreManager([
       {
@@ -211,6 +212,7 @@ describe('Controller tests', function () {
   });
 
   it('test controller action thrown error is caught', function () {
+    const spy = jest.spyOn(console, 'error').mockImplementation(() => {})
     const controllerInstance = new AppController(Container);
     const storeManager = new StoreManager([
       {
