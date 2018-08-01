@@ -31,7 +31,7 @@
     "no-extra-semi": 1,
     "no-underscore-dangle": 0,
     "no-lone-blocks": 0,
-    "valid-jsdoc": 1,
+    "valid-jsdoc": 0,
     "react/jsx-uses-react": 1,
     "react/jsx-no-undef": 2,
     "react/jsx-wrap-multilines": 2,

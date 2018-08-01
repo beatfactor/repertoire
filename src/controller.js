@@ -315,12 +315,6 @@ export default class BaseController {
                   };
                 }(dispatchResult));
 
-                // console.group('PUT')
-                // console.log('data', data)
-                // console.log('dispatchResult', dispatchResult)
-                // console.log('actionInstance', actionInstance)
-                // console.groupEnd();
-
                 yield put(reducerAction({
                   __data: data,
                   __dispatchResult: dispatchResult,

@@ -18,7 +18,9 @@
     "transform-es2015-parameters",
     ["transform-es2015-destructuring", { "loose": true }],
     "transform-es2015-block-scoping",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "transform-react-jsx",
+    "syntax-jsx"
   ],
   "env": {
     "test": {

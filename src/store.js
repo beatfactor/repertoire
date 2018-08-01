@@ -166,6 +166,10 @@ class StoreManager {
     return store;
   }
 
+  getStore() {
+    return this.store;
+  }
+
   create(initialState = {}) {
     this.store = this.createFinalStore(initialState);
     this.store.runSaga(this.rootSaga);
