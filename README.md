@@ -24,9 +24,7 @@ $ npm install repertoire --save
 ```
 
 # Anatomy of a Repertoire App
-Building an app with React & Redux has become much simpler. We're not going to draw any elaborate diagrams which paint a too optimistic picture and instead we're just going to start coding an example application. 
-
-Our example is a basic user administration module, starting with the main component. We're also using the React Router to handle our application's routing needs.
+Building an app with React & Redux has become much simpler. The example below is a basic user administration module, starting with the main component. We're also using the React Router to handle our application's routing needs.
 
 ```
 ├── modules/admin/
@@ -42,6 +40,7 @@ Our example is a basic user administration module, starting with the main compon
 
 ### 1. index.js
 This is the place where the Redux store is created and the app is being initialized.
+
 ```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
