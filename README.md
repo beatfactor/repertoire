@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/beatfactor/repertoire.svg?branch=master)](https://travis-ci.org/beatfactor/repertoire) [![NPM version](https://badge.fury.io/js/repertoire.png)](http://badge.fury.io/js/repertoire) [![Coverage Status](https://coveralls.io/repos/github/beatfactor/repertoire/badge.svg?branch=master)](https://coveralls.io/github/beatfactor/repertoire?branch=master)
 
 ***
-#### [Homepage](http://nightwatchjs.org) | [Getting Started](http://nightwatchjs.org/gettingstarted) | [API Reference](https://repertoire.gitbook.io/home/api-reference)
+#### [Homepage](https://repertoire.gitbook.io/home) | [Using Repertoire](https://repertoire.gitbook.io/home/using-repertoire) | [API Reference](https://repertoire.gitbook.io/home/api-reference)
 
 # What's Repertoire
 A small utility library which aims at simplifying building React + Redux apps. 
