@@ -29,7 +29,8 @@
     "clean": "rimraf lib dist es coverage",
     "eslint": "eslint src test",
     "prepare": "npm run clean && npm run build",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "codecov"
   },
   "peerDependencies": {
     "react": "^16.0.0-0",
@@ -73,6 +74,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-display-name": "^6.4.0",
     "babel-plugin-transform-react-jsx": "^6.4.0",
+    "codecov": "^3.0.2",
     "create-react-class": "^15.6.3",
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
@@ -96,6 +98,6 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "collectCoverage": false
+    "collectCoverage": true
   }
 }
