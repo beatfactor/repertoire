@@ -3,31 +3,12 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {call, take, put} from 'redux-saga/effects'
 
+import BaseController from './basecontroller.js'
 import Action from './action.js'
 import Utils from './utils.js'
 import ReduxStore from './store.js'
 
-export default class BaseController {
-  static getAllMethodNames(obj) {
-    const reservedMethods = ['constructor', 'stateNamespace', 'toString', 'component', 'connect'];
-    let methods = Reflect.ownKeys(obj.constructor.prototype);
-    const baseClassMethods = Reflect.ownKeys(BaseController.prototype);
-
-    methods = methods.filter(item => {
-      return !reservedMethods.includes(item) && !item.startsWith('__');
-    });
-
-    methods.forEach(item => {
-      if (baseClassMethods.includes(item)) {
-        // eslint-disable-next-line no-console
-        console.warn(`WARN: Controller method ${item} is a defined method on the super class. Overriding base controller methods ` +
-        'can produce unexpected results.');
-      }
-    });
-
-    return methods;
-  }
-
+export default class Controller extends BaseController {
   get stateNamespace() {
     return null;
   }
@@ -38,13 +19,6 @@ export default class BaseController {
     }
 
     return this.__component;
-  }
-
-  directConnect(name = null) {
-    ReduxStore.addGlobalSaga(this.sagaWatchers);
-    ReduxStore.addGlobalReducer(name || this.__component.name, this);
-
-    return this.connect();
   }
 
   get componentName() {
@@ -81,6 +55,25 @@ export default class BaseController {
     }, {});
   }
 
+  get state() {
+    return this.stateContainer;
+  }
+
+  get stateContainer() {
+    if (this['@@reduxStoreFn']) {
+      return this['@@reduxStoreFn'](true);
+    }
+
+    return this['@@reduxStore'];
+  }
+
+  directConnect(name = null) {
+    ReduxStore.addGlobalSaga(this.sagaWatchers);
+    ReduxStore.addGlobalReducer(name || this.__component.name, this);
+
+    return this.connect();
+  }
+
   /**
    * @return {{}}
    */
@@ -101,18 +94,6 @@ export default class BaseController {
     }, {});
 
     return bindActionCreators(actionCreators, dispatch);
-  }
-
-  get state() {
-    return this.stateContainer;
-  }
-
-  get stateContainer() {
-    if (this['@@reduxStoreFn']) {
-      return this['@@reduxStoreFn'](true);
-    }
-
-    return this['@@reduxStore'];
   }
 
   setStateContainer(fn) {
@@ -162,6 +143,8 @@ export default class BaseController {
   }
 
   constructor(component) {
+    super();
+
     this['@@reduxStore'] = {};
     this['@@reduxStoreFn'] = null;
     this['@@connectComponent'] = null;

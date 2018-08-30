@@ -2,9 +2,7 @@ import {combineReducers, compose, createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware, {END} from 'redux-saga'
 import {all, fork} from 'redux-saga/effects'
 import {handleActions} from 'redux-actions'
-
-import Controller from './controller.js'
-
+import BaseController from './basecontroller.js'
 
 export const dispatchActions = {};
 
@@ -72,7 +70,7 @@ class StoreManager {
 
       const controllerName = item.component.stateNamespace || item.component.componentName;
 
-      if (item.component instanceof Controller && !prev[controllerName]) {
+      if (item.component instanceof BaseController && !prev[controllerName]) {
         prev[controllerName] = item.component;
       }
 
