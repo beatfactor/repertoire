@@ -29,11 +29,7 @@ const config = {
     nodeResolve(),
     babel({
       exclude: '**/node_modules/**',
-      babelrc: false,
-      presets: [['env', {modules: false}], 'react'],
       plugins: [
-        'transform-class-properties',
-        'transform-object-rest-spread',
         'external-helpers',
       ],
     }),
@@ -67,15 +63,13 @@ export default [
       globals
     },
     external,
-    plugins: [babel({
-      exclude: '**/node_modules/**',
-      babelrc: false,
-      presets: [['env', {modules: false}], 'react'],
-      plugins: [
-        'transform-class-properties',
-        'transform-object-rest-spread',
-        'external-helpers',
-      ]
-    })]
+    plugins: [
+      babel({
+        exclude: '**/node_modules/**',
+        plugins: [
+          'external-helpers',
+        ]
+      })
+    ]
   }
 ]

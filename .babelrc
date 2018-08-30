@@ -52,10 +52,6 @@
     "transform-react-jsx",
     "syntax-jsx"
   ],
-  "presets": [
-    "env",
-    "react"
-  ],
   "env": {
     "test": {
       "plugins": [
