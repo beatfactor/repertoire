@@ -1,8 +1,10 @@
 import {combineReducers, compose, createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware, {END} from 'redux-saga'
-import {all, fork} from 'redux-saga/effects'
+import {effects} from 'redux-saga'
 import {handleActions} from 'redux-actions'
 import BaseController from './basecontroller.js'
+
+const {all, fork} = effects;
 
 export const dispatchActions = {};
 

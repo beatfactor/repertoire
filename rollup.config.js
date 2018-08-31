@@ -11,8 +11,7 @@ const globals = {
   redux: 'Redux',
   'react-redux': 'ReactRedux',
   'redux-actions': 'ReduxActions',
-  'redux-saga': 'ReduxSaga',
-  'redux-saga/effects': 'ReduxSaga.effects'
+  'redux-saga': 'ReduxSaga'
 };
 
 const external = Object.keys(globals);

@@ -1,7 +1,9 @@
 import {handleActions} from 'redux-actions'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {call, take, put} from 'redux-saga/effects'
+import {effects} from 'redux-saga'
+
+const {call, take, put} = effects;
 
 import BaseController from './basecontroller.js'
 import Action from './action.js'
