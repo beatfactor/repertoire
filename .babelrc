@@ -1,5 +1,9 @@
 {
   "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }],
     "transform-regenerator",
     "transform-decorators-legacy",
     [
@@ -53,6 +57,7 @@
     "transform-react-jsx",
     "syntax-jsx"
   ],
+
   "env": {
     "test": {
       "plugins": [
@@ -76,6 +81,7 @@
       ]
     },
     "rollup": {
+      "presets": [],
       "plugins": [
         "external-helpers"
       ]

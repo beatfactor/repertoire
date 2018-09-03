@@ -27,10 +27,11 @@ const config = {
   plugins: [
     nodeResolve(),
     babel({
+      runtimeHelpers: true,
       exclude: '**/node_modules/**',
       plugins: [
         'external-helpers',
-      ],
+      ]
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env)
@@ -52,23 +53,4 @@ if (env === 'production') {
   )
 }
 
-export default [
-  config,
-  {
-    input: 'src/index.js',
-    output: {
-      file: pkg.module,
-      format: 'es',
-      globals
-    },
-    external,
-    plugins: [
-      babel({
-        exclude: '**/node_modules/**',
-        plugins: [
-          'external-helpers',
-        ]
-      })
-    ]
-  }
-]
+export default config
